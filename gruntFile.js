@@ -8,27 +8,21 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-recess');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-html2js');
   grunt.loadNpmTasks('grunt-protractor-runner');
+  grunt.loadNpmTasks('grunt-ng-annotate');
 
   // Default task.
   grunt.registerTask('default', [ 'build', 'compass']);
-  grunt.registerTask('build', ['clean','html2js','concat','recess:build','copy:assets', 'compass']);
-  grunt.registerTask('release', ['clean','html2js','uglify','jshint','karma:unit','concat:index', 'recess:min','copy:assets', 'compass']);
+  grunt.registerTask('build', ['clean','html2js','concat','copy:assets', 'compass']);
+  grunt.registerTask('release', ['clean','html2js','concat','copy:assets', 'ngAnnotate','compass','uglify','jshint','karma:unit','protractor']);
   grunt.registerTask('test-watch', ['watch:test']);
 
   // Print a timestamp (useful for when watching)
   grunt.registerTask('timestamp', function() {
     grunt.log.subhead(Date());
   });
-
-  var karmaConfig = function(configFile, customOptions) {
-    var options = { configFile: configFile, keepalive: true };
-    var travisOptions = process.env.TRAVIS && { browsers: ['Firefox'], reporters: 'dots' };
-    return grunt.util._.extend(options, customOptions, travisOptions);
-  };
 
   // Project configuration.
   grunt.initConfig({
@@ -49,7 +43,7 @@ module.exports = function (grunt) {
         app: ['src/app/**/*.tpl.html'],
         common: ['src/common/**/*.tpl.html']
       },
-      sass: ['src/sass/base.scss'], // recess:build doesn't accept ** in its file patterns
+      sass: ['src/sass/base.scss'],
       sassWatch: ['src/sass/**/*.scss', 'src/app/**/*.scss']
     },
     compass: {                  // Task
@@ -65,6 +59,15 @@ module.exports = function (grunt) {
       assets: {
         files: [{ dest: '<%= distdir %>', src : '**', expand: true, cwd: 'src/assets/' }]
       }
+    },
+    ngAnnotate: {
+        options: {
+            // Task-specific options go here.
+        },
+        app: {
+          src:['<%= distdir %>/angular_starter.js'],
+          dest:'<%= distdir %>/angular_starter.js'
+        }
     },
     protractor: {
       options: {
@@ -89,8 +92,9 @@ module.exports = function (grunt) {
       }
     },
     karma: {
-      unit: { options: karmaConfig('test/config/unit.js') },
-      watch: { options: karmaConfig('test/config/unit.js', { singleRun:false, autoWatch: true}) }
+      unit: {
+        configFile: 'test/config/unit.js'
+      }
     },
     html2js: {
       app: {
@@ -142,6 +146,7 @@ module.exports = function (grunt) {
     uglify: {
       dist:{
         options: {
+          mangle: false,
           banner: '<%= banner %>'
         },
         src:['<%= src.js %>' ,'<%= src.jsTpl %>'],
@@ -158,24 +163,6 @@ module.exports = function (grunt) {
       jquery: {
         src:['vendor/jquery/*.js'],
         dest: '<%= distdir %>/js/jquery.js'
-      }
-    },
-    recess: {
-      build: {
-        files: {
-          '<%= distdir %>/css/<%= pkg.name %>.css': ['<%= src.sass %>']
-        },
-        options: {
-          compile: true
-        }
-      },
-      min: {
-        files: {
-          '<%= distdir %>/css/<%= pkg.name %>.css': ['<%= src.sass %>']
-        },
-        options: {
-          compress: true
-        }
       }
     },
     watch:{
