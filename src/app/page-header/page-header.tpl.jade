@@ -1,0 +1,7 @@
+.navbar(ng-controller='PageHeaderCtrl')
+  .page-header
+    a.logo(ng-click='home()')
+      img(src='http://placehold.it/150x55')
+    ul.nav
+      li(ng-repeat='link in links')
+        a(href='{{ link.src }}') {{ link.text }}

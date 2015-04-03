@@ -40,7 +40,7 @@ module.exports = function (grunt) {
       scenarios: ['test/**/*.scenario.js'],
       html: ['src/index.html'],
       tpl: {
-        app: ['src/app/**/*.tpl.html'],
+        app: ['src/app/**/*.tpl.html', 'src/app/**/*.tpl.jade'],
         common: ['src/common/**/*.tpl.html']
       },
       sass: ['src/sass/base.scss'],
@@ -61,13 +61,13 @@ module.exports = function (grunt) {
       }
     },
     ngAnnotate: {
-        options: {
-            // Task-specific options go here.
-        },
-        app: {
-          src:['<%= distdir %>/angular_starter.js'],
-          dest:'<%= distdir %>/angular_starter.js'
-        }
+      options: {
+        // Task-specific options go here.
+      },
+      app: {
+        src:['<%= distdir %>/angular_starter.js'],
+        dest:'<%= distdir %>/angular_starter.js'
+      }
     },
     protractor: {
       options: {
@@ -99,7 +99,15 @@ module.exports = function (grunt) {
     html2js: {
       app: {
         options: {
-          base: 'src/app'
+          base: 'src/app',
+          options: {
+            jade: {
+              //this prevents auto expansion of empty arguments
+              //e.g. "div(ui-view)" becomes "<div ui-view></div>" 
+              //     instead of "<div ui-view="ui-view"></div>"
+              doctype: 'html'
+            }
+          }
         },
         src: ['<%= src.tpl.app %>'],
         dest: '<%= distdir %>/templates/app.js',
