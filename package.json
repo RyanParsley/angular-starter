@@ -1,30 +1,31 @@
 {
-    "author": "Ryan Parsley",
-    "name": "angular_starter",
-    "version": "0.0.1",
-    "repository": {
-        "type": "git",
-        "url": ""
-    },
-    "bugs": {
-        "url": ""
-    },
-    "engines": {
-        "node": ">= 0.8.4"
-    },
-    "dependencies": {},
-    "devDependencies": {
-        "grunt": "~0.4.5",
-        "grunt-recess": "~0.3",
-        "grunt-contrib-clean": "~0.4.0",
-        "grunt-contrib-copy": "~0.4.0",
-        "grunt-contrib-jshint": "~0.2.0",
-        "grunt-contrib-concat": "~0.1.3",
-        "grunt-contrib-uglify": "~0.1.1",
-        "grunt-karma": "~0.4.4",
-        "grunt-html2js": "~0.1.0",
-        "grunt-contrib-watch": "~0.6.1",
-        "grunt-sass": "~0.14.0",
-        "grunt-contrib-compass": "~1.0.1"
-    }
+  "author": "Ryan Parsley",
+  "name": "angular_starter",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "engines": {
+    "node": ">= 0.8.4"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "cucumber": "^0.4.8",
+    "grunt": "~0.4.5",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-compass": "~1.0.1",
+    "grunt-contrib-concat": "~0.1.3",
+    "grunt-contrib-copy": "~0.4.0",
+    "grunt-contrib-jshint": "~0.2.0",
+    "grunt-contrib-uglify": "~0.1.1",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-html2js": "~0.1.0",
+    "grunt-karma": "~0.4.4",
+    "grunt-recess": "~0.3",
+    "grunt-sass": "~0.14.0"
+  }
 }

@@ -75,9 +75,15 @@ module.exports = function (grunt) {
           // Arguments passed to the command 
         }
       },
-      your_target: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too. 
+      jasmine: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too. 
         options: {
           configFile: "test/config/e2e.js", // Target-specific config file 
+          args: {} // Target-specific arguments 
+        }
+      },
+      cucumber: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too. 
+        options: {
+          configFile: "test/config/e2e-cucumber.js", // Target-specific config file 
           args: {} // Target-specific arguments 
         }
       }
