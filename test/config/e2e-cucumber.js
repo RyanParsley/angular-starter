@@ -6,7 +6,7 @@ exports.config = {
   framework: 'cucumber',
   cucumberOpts: {
     // define your step definitions in this file
-    require: '../e2e/features/step_definitions/protractor_steps.js',
+    require: '../e2e/features/step_definitions/**/*.js',
     format: 'progress'
   },
   capabilities: {
