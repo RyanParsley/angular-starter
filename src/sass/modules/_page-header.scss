@@ -1,0 +1,46 @@
+.page-header {
+    height: $page-header-height;
+    background: #fff;
+    overflow: hidden;
+    
+    .logo {
+        display: inline-block;
+        vertical-align: middle;
+        width: 19%;
+    }
+
+    .nav {
+        display: none;
+
+        @media screen and (min-width: $tablet-sm) {
+            display: block;
+        }
+    }
+
+    ul {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        padding: 0;
+        text-align: right;
+        width: 80%;
+        float:right;
+    }
+
+    li {
+        display: inline-block;
+        list-style: none;
+        margin: 0 0 0 15px;
+        padding: 0;
+    }
+}
+
+.navbar {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+
+    a {
+        text-decoration: none;
+    }
+}

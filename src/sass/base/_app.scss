@@ -1,0 +1,17 @@
+// Styles most relevant to the general layout of the app container.
+// Individual modules should get styles in their own files. Do not put them here.
+
+.app-wrapper {
+	position: relative;
+	height: $app-mobile-height; // Temporary until .app-wrapper height becomes dynamic (js)
+	border: solid 1px #ddd;
+}
+
+.app-view {
+	position: absolute;
+	top: $app-header-height;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border: solid 1px #ddd;
+}

@@ -1,0 +1,530 @@
+@import "variables";
+
+@font-face {
+    font-family: 'icomoon';
+    src:url('/icomoon/fonts/icomoon.eot?kn6boi');
+    src:url('/icomoon/fonts/icomoon.eot?#iefixkn6boi') format('embedded-opentype'),
+    url('/icomoon/fonts/icomoon.woff?kn6boi') format('woff'),
+    url('/icomoon/fonts/icomoon.ttf?kn6boi') format('truetype'),
+    url('/icomoon/fonts/icomoon.svg?kn6boi#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+*[class^="icon-"], *[class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+//Full set directly from Icomoon exports
+//Use Agnostic Icon classes below for prototypes and styleguide
+.icon-m-circled-plus:before {
+    content: "\e622";
+}
+.icon-m-circled-minus:before {
+    content: "\e637";
+}
+.icon-youtube:before {
+    content: "\e600";
+}
+.icon-d-unchecked:before {
+    content: "\e601";
+}
+.icon-d-checked:before {
+    content: "\e602";
+}
+.icon-d-close-solid:before {
+    content: "\e603";
+}
+.icon-d-details:before {
+    content: "\e604";
+}
+.icon-d-details-hover:before {
+    content: "\e605";
+}
+.icon-d-filter:before {
+    content: "\e606";
+}
+.icon-d-minus:before {
+    content: "\e607";
+}
+.icon-d-plus:before {
+    content: "\e608";
+}
+.icon-d-info:before {
+    content: "\e609";
+}
+.icon-d-info-hover:before {
+    content: "\e60a";
+}
+.icon-d-get-location:before {
+    content: "\e60b";
+}
+.icon-d-search:before {
+    content: "\e60c";
+}
+.icon-d-warning:before {
+    content: "\e60d";
+}
+.icon-d-question:before {
+    content: "\e60e";
+}
+.icon-d-question-hover:before {
+    content: "\e60f";
+}
+.icon-d-close:before {
+    content: "\e610";
+}
+.icon-d-close-hover:before {
+    content: "\e611";
+}
+.icon-d-email:before {
+    content: "\e613";
+}
+.icon-d-email-hover:before {
+    content: "\e614";
+}
+.icon-d-directions:before {
+    content: "\e616";
+}
+.icon-d-directions-hover:before {
+    content: "\e617";
+}
+.icon-d-link:before {
+    content: "\e618";
+}
+.icon-d-link-hover:before {
+    content: "\e619";
+}
+.icon-d-phone:before {
+    content: "\e61a";
+}
+.icon-d-plus-hollow:before {
+    content: "\e61b";
+}
+.icon-d-plus-hollow-hover:before {
+    content: "\e61c";
+}
+.icon-d-search2:before {
+    content: "\e61d";
+}
+.icon-d-search2-hover:before {
+    content: "\e61e";
+}
+.icon-d-sendto:before {
+    content: "\e61f";
+}
+.icon-d-sendto-hover:before {
+    content: "\e620";
+}
+.icon-m-unchecked:before {
+    content: "\e621";
+}
+.icon-m-checked:before {
+    content: "\e636";
+}
+.icon-m-close-solid:before {
+    content: "\e623";
+}
+.icon-m-details:before {
+    content: "\e624";
+}
+.icon-m-filter:before {
+    content: "\e625";
+}
+.icon-m-minus:before {
+    content: "\e626";
+}
+.icon-m-plus:before {
+    content: "\e627";
+}
+.icon-m-info:before {
+    content: "\e628";
+}
+.icon-m-get-location:before {
+    content: "\e629";
+}
+.icon-m-question:before {
+    content: "\e62a";
+}
+.icon-m-search:before {
+    content: "\e62b";
+}
+.icon-m-warning:before {
+    content: "\e62c";
+}
+.icon-m-phone-circled:before {
+    content: "\e62d";
+}
+.icon-m-chevron-hollow:before {
+    content: "\e62e";
+}
+.icon-m-close:before {
+    content: "\e62f";
+}
+.icon-m-email:before {
+    content: "\e630";
+}
+.icon-m-directions:before {
+    content: "\e631";
+}
+.icon-m-play:before {
+    content: "\e632";
+}
+.icon-m-plus-hollow:before {
+    content: "\e633";
+}
+.icon-m-search2:before {
+    content: "\e634";
+}
+.icon-new-window:before {
+    content: "\e635";
+}
+.icon-chevron-thin-left:before {
+    content: "\e612";
+}
+.icon-chevron-thin-right:before {
+    content: "\e615";
+}
+
+
+//Use these classes for mobile and desktop only icons.
+.icon-desktop-only {
+    @media screen and (max-width: $screen-sm){
+        visibility: visible !important;
+
+        &:before{
+            content: "N/A" !important;
+            font-family: AntennaLight;
+            font-size: 18px;
+        }
+    }
+}
+
+.icon-mobile-only {
+    @media screen and (min-width: $screen-sm){
+        visibility: visible !important;
+
+        &:before{
+            content: "N/A" !important;
+            font-family: AntennaLight;
+            font-size: 18px;
+        }
+    }
+}
+
+//Agnostic class names with media queries
+//These icons have mobile and desktop counterparts
+//Use in prototypes and styleguide
+.icon-minus {
+    &:before {
+        content: "\e626";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e607";
+        }
+    }
+}
+
+.icon-plus {
+    &:before {
+        content: "\e627";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e608";
+        }
+    }
+}
+
+.icon-question {
+    &:before {
+        content: "\e62a";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e60e";
+        }
+
+        &:hover:before {
+            content: "\e60f";
+        }
+    }
+}
+
+.icon-link {
+    &:before {
+        content: "\e62e";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e618";
+        }
+
+        &:hover:before {
+            content: "\e619";
+        }
+    }
+}
+
+.icon-warning {
+    &:before {
+        content: "\e62c";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e60d";
+        }
+    }
+}
+
+.icon-checked {
+    &:before {
+        content: "\e636";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e602";
+        }
+    }
+}
+
+.icon-unchecked {
+    &:before {
+        content: "\e621";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e601";
+        }
+    }
+}
+
+.icon-close-solid {
+    &:before {
+        content: "\e623";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e603";
+        }
+    }
+}
+
+.icon-filter {
+    &:before {
+        content: "\e625";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e606";
+        }
+    }
+}
+
+.icon-info {
+    &:before {
+        content: "\e628";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e609";
+        }
+
+        &:hover:before {
+            content: "\e60a";
+        }
+    }
+}
+
+.icon-details {
+    &:before {
+        content: "\e624";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e604";
+        }
+
+        &:hover:before {
+            content: "\e605";
+        }
+    }
+}
+
+.icon-get-location {
+    &:before {
+        content: "\e629";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e60b";
+        }
+    }
+}
+
+.icon-search {
+    &:before {
+        content: "\e62b";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e60c";
+        }
+    }
+}
+
+//Mobile only
+.icon-minus-circled {
+    &:before {
+        content: "\e637";
+    }
+}
+
+//Mobile only
+.icon-plus-circled {
+    &:before {
+        content: "\e622";
+    }
+}
+
+.icon-close {
+    &:before {
+        content: "\e62f";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e610";
+        }
+
+        &:hover:before {
+            content: "\e611";
+        }
+    }
+}
+
+.icon-email {
+    &:before {
+        content: "\e630";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e613";
+        }
+
+        &:hover:before {
+            content: "\e614";
+        }
+    }
+}
+
+.icon-directions {
+    &:before {
+        content: "\e631";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e616";
+        }
+
+        &:hover:before {
+            content: "\e617";
+        }
+    }
+}
+
+.icon-plus-hollow {
+    &:before {
+        content: "\e633";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e61b";
+        }
+
+        &:hover:before {
+            content: "\e61c";
+        }
+    }
+}
+
+.icon-search-circled {
+    &:before {
+        content: "\e634";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e61d";
+        }
+
+        &:hover:before {
+            content: "\e61e";
+        }
+    }
+}
+
+//Desktop only
+.icon-sendto{
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e61f";
+        }
+
+        &:hover:before {
+            content: "\e620";
+        }
+    }
+}
+
+.icon-phone {
+    &:before {
+        content: "\e62d";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e61a";
+        }
+    }
+}
+
+.icon-play {
+    &:before {
+        content: "\e632";
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        &:before {
+            content: "\e632";
+        }
+    }
+}

@@ -1,0 +1,12 @@
+<div class="navbar" ng-controller="PageHeaderCtrl">
+  <div class="page-header">
+    <a class="logo" ng-click="home()">
+      <img src="http://placehold.it/150x55">
+    </a>
+    <ul class="nav">
+      <li ng-repeat="link in links">
+        <a href="{{ link.src }}">{{ link.text }}</a>
+      </li>
+    </ul>
+  </div>
+</div>

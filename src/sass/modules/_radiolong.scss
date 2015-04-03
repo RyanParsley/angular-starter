@@ -1,0 +1,28 @@
+.radiolong {
+    .radioBtn {     
+        display: inline-block;
+        vertical-align: middle;
+        padding-bottom: 15px;
+    }
+
+    .mid-sec {
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 15px;
+
+        img {
+            padding-bottom: 10px;
+        }
+
+        .feature-title {
+            padding-left: 2px;
+            font-size: 12px;
+        }
+    }
+    .info {
+        float: right;
+        margin-top: 35px;
+        font-size: 1.9em;
+        color: #2596cf; 
+    }
+}

@@ -1,0 +1,51 @@
+.categories {
+    background: #fff;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: $action-btn-height * 2;
+    width: $categories-width-mobile;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background: url('../img/categories-bg.png') 100% 0;
+    z-index: 2;
+    
+    @media screen and (min-width: $tablet-sm) {
+        bottom: 0;
+        width: $categories-width-desktop;
+    }
+
+    &::-webkit-scrollbar {
+        width: 1px;
+    }
+
+    li {
+        padding: 0.7em 1.5em;
+        font-family: arial, helvetica, sans-serif;
+        text-align: center;
+        cursor: pointer;
+        
+        a {
+            text-decoration: none;
+            
+            h3 {
+                color: #2596cf;
+                font-weight: normal;
+                font-size: 10px;
+            }
+        }
+
+        &.activeCategory {
+            color: #fff;
+            background: #1b394e;
+        }
+    }
+
+    img {
+        max-width: 100%;
+    }
+}

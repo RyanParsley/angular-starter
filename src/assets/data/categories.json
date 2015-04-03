@@ -1,0 +1,14 @@
+[{
+    "img": "http://placehold.it/50x50",
+    "alt": "",
+    "title": "Category 1",
+    "state": "category1",
+    "text": "Description of category 1"
+},
+{
+    "img": "http://placehold.it/50x50",
+    "alt": "",
+    "title": "Category 2",
+    "state": "caegory2",
+    "text": "Description of category 2"
+}]

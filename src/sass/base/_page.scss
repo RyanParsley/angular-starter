@@ -1,0 +1,8 @@
+// Styles specific to the page wrapper/container. Individual modules should be styled
+// in their corresponding .scss file, not here.
+
+.page-wrapper {
+	max-width: $max-page-width;
+	width: 100%;
+	margin: auto;
+}
