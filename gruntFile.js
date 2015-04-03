@@ -208,10 +208,7 @@ module.exports = function (grunt) {
       },
       test: {
         files:['<%= src.js %>', '<%= src.specs %>'],
-        tasks:['jshint', 'karma:unit', 'protractor'],
-        options: {
-          livereload: false
-        }
+        tasks:['jshint', 'karma:unit', 'protractor']
       }
     },
     jshint:{
