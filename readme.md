@@ -27,3 +27,8 @@ grunt release
 ```
 npm install
 ```
+
+## Bonus Round
+
+I build this [tmux
+config](https://gist.github.com/RyanParsley/f636ef61991d055914c9) for use with this project.
