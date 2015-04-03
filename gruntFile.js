@@ -12,11 +12,12 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-html2js');
   grunt.loadNpmTasks('grunt-protractor-runner');
   grunt.loadNpmTasks('grunt-ng-annotate');
+  grunt.loadNpmTasks('grunt-contrib-jade');
 
   // Default task.
   grunt.registerTask('default', [ 'build', 'compass']);
-  grunt.registerTask('build', ['clean','html2js','concat','copy:assets', 'compass']);
-  grunt.registerTask('release', ['clean','html2js','concat','copy:assets', 'ngAnnotate','compass','uglify','jshint','karma:unit','protractor']);
+  grunt.registerTask('build', ['clean', 'jade', 'html2js', 'concat', 'copy:assets', 'compass']);
+  grunt.registerTask('release', ['clean', 'jade', 'html2js', 'concat', 'copy:assets', 'ngAnnotate', 'compass', 'uglify', 'jshint', 'karma:unit', 'protractor']);
   grunt.registerTask('test-watch', ['watch:test']);
 
   // Print a timestamp (useful for when watching)
@@ -33,7 +34,7 @@ module.exports = function (grunt) {
       '<%= pkg.homepage ? " * " + pkg.homepage + "\\n" : "" %>' +
       ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>;\n' +
       ' * Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %>\n */\n',
-      src: {
+    src: {
       js: ['src/**/*.js'],
       jsTpl: ['<%= distdir %>/templates/**/*.js'],
       specs: ['test/**/*.spec.js'],
@@ -54,6 +55,19 @@ module.exports = function (grunt) {
         }
       }
     },
+    jade: {
+      compile: {
+        options: {
+          data: {
+            debug: false,
+            projectName: '<%= pkg.name %>'
+          }
+        },
+        files: {
+          'dist/index.html': ['src/index.jade']
+        }
+      }
+    },
     clean: ['<%= distdir %>/*'],
     copy: {
       assets: {
@@ -71,7 +85,7 @@ module.exports = function (grunt) {
     },
     protractor: {
       options: {
-        configFile: "node_modules/protractor/example/conf.js", // Default config file
+        configFile: 'node_modules/protractor/example/conf.js', // Default config file
         keepAlive: true, // If false, the grunt process stops when the test fails.
         noColor: false, // If true, protractor will not use colors in its output.
         args: {
@@ -80,13 +94,13 @@ module.exports = function (grunt) {
       },
       jasmine: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too.
         options: {
-          configFile: "test/config/e2e.js", // Target-specific config file
+          configFile: 'test/config/e2e.js', // Target-specific config file
           args: {} // Target-specific arguments
         }
       },
       cucumber: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too.
         options: {
-          configFile: "test/config/e2e-cucumber.js", // Target-specific config file
+          configFile: 'test/config/e2e-cucumber.js', // Target-specific config file
           args: {} // Target-specific arguments
         }
       }
@@ -132,7 +146,7 @@ module.exports = function (grunt) {
         dest:'<%= distdir %>/js/<%= pkg.name %>.js'
       },
       index: {
-        src: ['src/index.html'],
+        src: ['<%=distdir %>/index.html'],
         dest: '<%= distdir %>/index.html',
         options: {
           process: true

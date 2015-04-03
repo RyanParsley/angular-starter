@@ -1,0 +1,26 @@
+doctype html
+html(lang='en', ng-app='app')
+  head
+    base(href='/')
+
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+
+    title Hello World!
+
+    link(rel='stylesheet', type='text/css', href='css/base.css')
+    link(rel='stylesheet', type='text/css', href='css/variables.css')
+    link(rel='stylesheet', type='text/css', href='css/icon-font.css')
+
+    script(type='text/javascript', src='js/jquery.js')
+    script(type='text/javascript', src='js/angular.js')
+    script(type='text/javascript', src='js/mongolab.js')
+    script(type='text/javascript', src='js/#{projectName}.js')
+
+  body(ng-controller='AppCtrl')
+    .page-wrapper
+      .header-wrap(ng-include="'page-header/page-header.tpl.jade'")
+      .app-wrapper
+         .app-view
+           .info-container
+             div(ng-include="'preview/preview.tpl.jade'")
+      .footer-wrap
