@@ -1,5 +1,9 @@
 # A sensible starting point for angular based single page apps
 
+* Jade for markup
+* Sass for styles
+* Module based directory structure
+
 ## Serve it locally 
 
 ```
