@@ -71,23 +71,23 @@ module.exports = function (grunt) {
     },
     protractor: {
       options: {
-        configFile: "node_modules/protractor/example/conf.js", // Default config file 
-        keepAlive: true, // If false, the grunt process stops when the test fails. 
-        noColor: false, // If true, protractor will not use colors in its output. 
+        configFile: "node_modules/protractor/example/conf.js", // Default config file
+        keepAlive: true, // If false, the grunt process stops when the test fails.
+        noColor: false, // If true, protractor will not use colors in its output.
         args: {
-          // Arguments passed to the command 
+          // Arguments passed to the command
         }
       },
-      jasmine: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too. 
+      jasmine: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too.
         options: {
-          configFile: "test/config/e2e.js", // Target-specific config file 
-          args: {} // Target-specific arguments 
+          configFile: "test/config/e2e.js", // Target-specific config file
+          args: {} // Target-specific arguments
         }
       },
-      cucumber: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too. 
+      cucumber: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too.
         options: {
-          configFile: "test/config/e2e-cucumber.js", // Target-specific config file 
-          args: {} // Target-specific arguments 
+          configFile: "test/config/e2e-cucumber.js", // Target-specific config file
+          args: {} // Target-specific arguments
         }
       }
     },
@@ -103,7 +103,7 @@ module.exports = function (grunt) {
           options: {
             jade: {
               //this prevents auto expansion of empty arguments
-              //e.g. "div(ui-view)" becomes "<div ui-view></div>" 
+              //e.g. "div(ui-view)" becomes "<div ui-view></div>"
               //     instead of "<div ui-view="ui-view"></div>"
               doctype: 'html'
             }
