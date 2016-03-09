@@ -179,15 +179,15 @@ module.exports = function (grunt) {
         }
       },
       angular: {
-        src:['vendor/angular/angular.js', 'vendor/angular/angular-route.js', 'vendor/angular/angular-ui-router.min.js'],
+        src:['vendor/angular/angular.js', 'vendor/angular-ui-router/release/angular-ui-router.min.js', 'vendor/angular-animate/angular-animate.min.js'],
         dest: '<%= distdir %>/js/angular.js'
       },
       mongo: {
-        src:['vendor/mongolab/*.js'],
+        src:['vendor/angularjs-mongolab/src/angular-mongolab.js'],
         dest: '<%= distdir %>/js/mongolab.js'
       },
       jquery: {
-        src:['vendor/jquery/*.js'],
+        src:['vendor/jquery/dist/jquery.min.js'],
         dest: '<%= distdir %>/js/jquery.js'
       }
     },

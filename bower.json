@@ -1,0 +1,28 @@
+{
+  "name": "angular_starter",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Ryan Parsley"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/RyanParsley/angular-starter",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs-mongolab": "^1.0.0-RC1",
+    "jquery": "^2.2.1",
+    "angular-animate": "^1.5.0",
+    "angular-ui-router": "^0.2.18",
+    "angular": "^1.5.0"
+  }
+}
