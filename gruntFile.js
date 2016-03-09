@@ -1,5 +1,6 @@
 module.exports = function (grunt) {
   'use strict';
+
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -14,13 +15,38 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-ng-annotate');
   grunt.loadNpmTasks('grunt-contrib-jade');
 
-  // Default task.
-  grunt.registerTask('default', [ 'build', 'compass']);
-  grunt.registerTask('build', ['clean', 'jade', 'html2js', 'concat', 'copy:assets', 'compass']);
-  grunt.registerTask('release', ['clean', 'jade', 'html2js', 'concat', 'copy:assets', 'ngAnnotate', 'compass', 'uglify', 'jshint', 'karma:unit', 'protractor']);
-  grunt.registerTask('test-watch', ['watch:test']);
+  grunt.registerTask('default', [
+    'build',
+    'compass'
+  ]);
 
-  // Print a timestamp (useful for when watching)
+  grunt.registerTask('build', [
+    'clean',
+    'jade',
+    'html2js',
+    'concat',
+    'copy:assets',
+    'compass'
+  ]);
+
+  grunt.registerTask('release', [
+    'clean',
+    'jade',
+    'html2js',
+    'concat',
+    'copy:assets',
+    'ngAnnotate',
+    'compass',
+    'uglify',
+    'jshint',
+    'karma:unit',
+    'protractor:jasmine'
+  ]);
+
+  grunt.registerTask('test-watch', [
+    'watch:test'
+  ]);
+
   grunt.registerTask('timestamp', function() {
     grunt.log.subhead(Date());
   });
@@ -208,7 +234,7 @@ module.exports = function (grunt) {
       },
       test: {
         files:['<%= src.js %>', '<%= src.specs %>'],
-        tasks:['jshint', 'karma:unit', 'protractor']
+        tasks:['jshint', 'karma:unit', 'protractor:jasmine']
       }
     },
     jshint:{

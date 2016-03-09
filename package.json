@@ -12,7 +12,9 @@
   "engines": {
     "node": ">= 4.2.5"
   },
-  "dependencies": {},
+  "dependencies": {
+    "jasmine": "^2.4.1"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^5.2.0",
@@ -34,6 +36,7 @@
     "grunt-sass": "^1.1.0",
     "grunt-webdriver": "^1.0.0",
     "jade": "^1.9.2",
+    "karma-junit-reporter": "^0.3.8",
     "marked": "^0.3.3",
     "protractor": "^2.0.0"
   }

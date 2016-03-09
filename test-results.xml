@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome 48.0.2564 (Mac OS X 10.11.3)" package="" timestamp="2016-03-09T18:52:55" id="0" hostname="CINNPARSLEY.local" tests="1" errors="0" failures="0" time="0.022">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"/>
+  </properties>
+  <testcase name="should change data" time="0.022" classname="PageHeaderCtrl"/>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
