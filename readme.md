@@ -26,9 +26,27 @@ grunt release
 
 ```
 npm install
+bower install
 ```
 
 ## Bonus Round
 
-I build this [tmux
-config](https://gist.github.com/RyanParsley/f636ef61991d055914c9) for use with this project.
+Here's a reasonable tmux configuration for this project
+
+```
+# ~/.tmuxinator/angularstarter.yml
+
+name: angularstarter
+root: ~/Sites/angularStarter
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        - grunt watch:test
+        -
+  - webdriver: webdriver-manager start
+  - server: grunt watch:all
+  - irssi: irssi
+```
